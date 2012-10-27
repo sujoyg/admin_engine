@@ -1,0 +1,2 @@
+module AdminEngine
+end
