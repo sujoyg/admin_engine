@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def authorize_admin
     unless current_user && current_user.admin?
-      raise ActionController::RoutingError.new('Not Found')
+      raise AbstractController::ActionNotFound
     end
   end
 end
