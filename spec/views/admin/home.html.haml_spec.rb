@@ -1,8 +1,9 @@
 require 'spec_helper'
 
 describe 'admin/home' do
-  it 'should render a login page.' do
+  it 'should render a placeholder message.' do
     render
-    view.should render_template(:partial => 'users/_login')
+    rendered.should have_selector 'h2', :content => 'Admin'
+    rendered.should contain 'Customize this page by implementing views/admin/home.'
   end
 end

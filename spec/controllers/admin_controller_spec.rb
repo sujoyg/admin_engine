@@ -1,10 +1,13 @@
 require 'spec_helper'
 
 describe AdminController do
-  it { should have_skip_before_filter(:authorize).only(:home) }
+  it { should have_skip_before_filter(:authorize) }
+  it { should have_before_filter(:authorize_admin) }
 
   describe '#home' do
-    it 'responds.' do
+    before { controller.stub!(:authorize_admin) }
+
+    it 'should render admin/home.' do
       get :home
 
       response.should be_success
