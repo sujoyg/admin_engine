@@ -10,13 +10,14 @@ Gem::Specification.new do |s|
   s.authors     = ["Sujoy Gupta"]
   s.email       = ["sujoyg@gmail.com"]
   s.homepage    = "http://www.github.com/sujoyg/admin_engine"
+  s.description = "A rails engine for adding admin functionality."
   s.summary     = "A rails engine for adding admin functionality."
-
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.license     = "MIT"
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "haml", "~> 3.1.4"
   s.add_dependency "rails", "~> 3.2.1"
-  s.add_dependency "user_authentication", "~> 0.0.6"
+  s.add_dependency "user_authentication", "~> 0.1.1"
 
   s.add_development_dependency "factory_girl_rails", "~> 4.0"
   s.add_development_dependency "rspec-rails"
