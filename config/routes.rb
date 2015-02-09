@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  match 'admin', :to => 'admin#home'
+  get 'admin', :to => 'admin#home'
 end
