@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe 'admin/home' do
+describe 'admin/home', :type => :view do
   it 'should render a placeholder message.' do
     render
-    rendered.should have_selector 'h2', :content => 'Admin'
-    rendered.should contain 'Customize this page by implementing views/admin/home.'
+    expect(rendered).to have_selector 'h2', text: 'Admin'
+    expect(rendered).to have_text 'Customize this page by implementing views/admin/home.'
   end
 end

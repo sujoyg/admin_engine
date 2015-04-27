@@ -1,13 +1,12 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../dummy/config/environment", __FILE__)
-require 'factory_girl'
 require 'rspec/rails'
-require 'rspec/autorun'
+require 'factory_girl'
+require 'factories'
 require 'specstar/controllers'
 require 'specstar/models'
 require 'specstar/support/random'
-require 'factories'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

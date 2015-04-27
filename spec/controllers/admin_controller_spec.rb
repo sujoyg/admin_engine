@@ -1,17 +1,17 @@
 require 'spec_helper'
 
-describe AdminController do
+describe AdminController, :type => :controller do
   it { should have_skip_before_filter(:authorize) }
   it { should have_before_filter(:authorize_admin) }
 
   describe '#home' do
-    before { controller.stub!(:authorize_admin) }
+    before { allow(controller).to receive(:authorize_admin) }
 
     it 'should render admin/home.' do
       get :home
 
-      response.should be_success
-      response.should render_template 'admin/home'
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template 'admin/home'
     end
   end
 end
