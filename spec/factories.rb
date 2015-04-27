@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :admin do
-    user_id { create(:user).id }
+    account_id { create(:account).id }
   end
 
-  factory :user do
+  factory :account do
     email { random_email }
   end
 end

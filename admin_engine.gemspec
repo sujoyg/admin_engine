@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "haml", "~> 4.0"
   s.add_dependency "rails", "~> 4.1"
-  s.add_dependency "user_authentication", "~> 0.2.2"
+  s.add_dependency "user_authentication", "~> 1.0"
 
   s.add_development_dependency "capybara", "~> 2.4"
   s.add_development_dependency "factory_girl_rails", "~> 4.0"

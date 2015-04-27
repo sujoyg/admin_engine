@@ -1,4 +1,5 @@
 # AdminEngine
+## Usage
 
 Install the database migration to create an admins table.
 
@@ -8,20 +9,20 @@ Run the database migration.
 
     bundle exec rake db:migrate
  
-Use a before_filter for actions that require the logged in user to be admin.
+Use a before_filter for actions that require the logged in account to be admin.
 
     before_filter :authorize_admin
 
 Visit http://localhost:3000/admin
 
-If the logged in user is not an admin, you will see the following:
+If the logged in account is not an admin, you will see the following:
 
 ### Unknown action
 
 AbstractController::ActionNotFound
 <br>
 <hr>  
-Make the logged in user an admin by adding an entry in the admins table.
+Make the logged in account an admin by adding an entry in the admins table.
 
 Now you will see the following:
 
@@ -29,3 +30,18 @@ Now you will see the following:
 
 Customize this page by implementing views/admin/home.
 <hr>
+## Development
+### Prepare the "dummy" app
+    pushd spec/dummy
+    rake user_authentication:install:migrations
+    rake admin_engine:install:migrations
+    rake db:drop
+    rake db:create
+    rake db:migrate
+    rake db:test:prepare
+    popd
+    
+### Run specs
+    rspec
+    
+   
